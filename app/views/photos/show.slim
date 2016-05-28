@@ -1,0 +1,3 @@
+= image_tag @photo.image.thumb('400x400').url if @photo.image_stored?
+= link_to "Back", photos_path 
+= link_to 'Destroy', { action: :destroy, id: @photo.id }, method: :delete
