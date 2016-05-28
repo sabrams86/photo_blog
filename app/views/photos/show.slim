@@ -1,3 +1,8 @@
 = image_tag @photo.image.thumb('400x400').url if @photo.image_stored?
+= form_for [@photo, @comment] do |f|
+  = f.text_field :content
+- @photo.comments.each do |comment|
+  p = comment.content
+  p = comment.created_at
 = link_to "Back", photos_path 
 = link_to 'Destroy', { action: :destroy, id: @photo.id }, method: :delete
